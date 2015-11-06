@@ -39,7 +39,7 @@ public class DAOUtil {
 		Class.forName("com.mysql.jdbc.Driver");
 		
 //		con = DriverManager.getConnection("jdbc:mysql://localhost/tkhts_moodle","tkhts_server","tk@123");
-		con = DriverManager.getConnection("jdbc:mysql://192.168.5.2:3306/moodle","root","root");
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/moodle","root","root");
 		
 		if(con!= null){
 			logger.debug("connection created");
