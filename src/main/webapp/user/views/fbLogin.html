@@ -1,0 +1,41 @@
+
+<!-- <style type="text/css">
+
+#label{
+    text-align: center;
+    
+}
+</style> -->
+ <div class="container">
+ 	<div class="">
+ 	<!--
+ 	<h3 class="red">{{errMsgService.msg}}</h3>
+ 	-->
+ 	 	<h3 class="red">{{errorMessage}}</h3>
+
+
+ 	<h2 id="label" style="color: purple;">Sign In</h2><br>
+
+      <form name="userForm" class="form-signin" role="form">
+
+        <div class="form-group" ng-class="{ 'has-error': userForm.username.$invalid && !userForm.username.$pristine}">
+            <input type="text" name="username" class="form-control" placeholder="Username" ng-model="loginService.loginDetails.userName" required autofocus>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': userForm.password.$invalid && !userForm.password.$pristine}">
+            <input type="password" name="password" class="form-control" placeholder="Password" ng-model="loginService.loginDetails.password" required>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" ng-click="submitData()">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="guestUserData()">Sign in As Guest User</button>
+
+
+          <!-- fb login button -->
+                  <button type="button" class="btn btn-primary btn-lg btn-block" data-ng-show="!logged" data-ng-click="IntentLogin()">Login with Facebook </button>
+                  <button type="button" class="btn btn-success btn-lg btn-block" data-ng-show="logged" data-ng-click="getFbLogin(true)">Login with Facebook</button>
+          <button type="button" class="btn btn-danger btn-large" data-ng-show="logged" data-ng-disabled="!facebookReady" data-ng-click="fbLogout()">Logout</button>
+
+		<a href="#/forgot-pwd">Forgotten Password</a>
+      </form>
+
+    </div>
+</div>

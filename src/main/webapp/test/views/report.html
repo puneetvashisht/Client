@@ -1,0 +1,57 @@
+<style>
+#l-align {
+	padding: 0, 0;
+}
+
+#m-align {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+#r-align {
+	text-align: right;
+}
+</style>
+
+<!--<tk-test-header></tk-test-header>-->
+<div class="row">
+	<div class="col-md-10">
+		<h1>Test Result</h1>
+		<h1>{{totalScore / totalMarks * 100 | number:2}} %</h1>
+
+		<!-- <h1>here : {{service.prefferedBehaviour}}</h1> -->
+		<div ng-show="service.prefferedBehaviour == 'A' ">
+			<!-- 			<h1 class="text-danger">No Result assigned</h1> -->
+			<h1 class="text-success">Your result has been uploaded successfully.</h1>
+		</div>
+		<div ng-show="service.prefferedBehaviour == 'P' ">
+			<!-- 		<h1 class="text-danger">Result assigned</h1> -->
+			<div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="pull-left">#</th>
+							<th>Questions</th>
+							<th class="pull-right">Score</th>
+						</tr>
+					</thead>
+				</table>
+				<!-- 				<table ng-repeat="question in service.questions" class="row table"> -->
+				<table ng-repeat="question in service.questions" class="table">
+					<tr
+						ng-class="{green: (question.score > 0), red: (question.score <= 0)}">
+						<td class="pull-left">{{$index+1}}</td>
+						<td class="col-md-11 pull-left">{{question.text}}</td>
+						<td class="pull-right">{{question.score}}</td>
+
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<tk-right-pane></tk-right-pane>
+	</div>
+</div>
+<!-- 	<tk-footer></tk-footer> -->

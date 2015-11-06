@@ -1,0 +1,42 @@
+<style type="text/css">
+    body {
+
+    }
+
+    section {
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px 10px 10px 5px;
+        border-radius: 20px;
+    }
+
+    #label {
+        text-align: center;
+    }
+
+    .error {
+        color: red;
+        margin-left: auto;
+        margin-right: 5px;
+        display: block;
+    }
+</style>
+
+<section>
+    <h2 id="label" style="color: purple;">Testimonials</h2><br>
+
+    <table class="table">
+        <tr ng-repeat="feedback in feedbacks">
+            <td style="width: 30%;">
+                <figure style="align-content: center;text-align: center">
+                    <img src="{{commonPath}}images/{{feedback.imgUrl}}" class="img-circle" width="150" height="150"/>
+                    <figcaption><p style="font-size: 20px;font-family: sans-serif, Helvetica, Arial;font-style: inherit;">{{feedback.userName}}</p><p style="font-size: 14px;font-family: sans-serif, Helvetica, Arial;font-style: inherit;">{{feedback.companyName}}</p></figcaption>
+                </figure>
+
+                <!-- <img src="cinqueterre.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236">--> </td>
+            <td style="width: 70%;"><p style="  font-size: 20px;font-family: sans-serif, Helvetica, Arial;font-style: italic;">
+                "{{feedback.text}}"</p>
+            </td>
+        </tr>
+    </table>
+</section>

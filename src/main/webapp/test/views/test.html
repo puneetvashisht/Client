@@ -1,0 +1,94 @@
+<div>
+
+<!-- <div class="row">
+        <div class="pull-right">
+            <button class="btn btn-primary disabled" ng-click="loadData()" >Start Test</button>
+            <button class="btn btn-primary" ng-click="submitData()">Submit Test</button>
+        </div>
+    </div> -->
+    <div class="row">
+           	<!-- <timer countdown="100*60" interval="1000" finish-callback="callbackTimer.finished()"> -->
+           	<timer countdown="101" interval="(service.tl / 100) * 1000" finish-callback="callbackTimer.finished()"> 
+ 		    	<!-- <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: {{countdown}}%;">
+  {{countdown}}%
+  </div>
+    </div> -->
+    <div class="progress">
+      			<div class="progress-bar progress-bar-striped active" style="width: {{countdown}}%">
+      				{{countdown}}%
+      			</div>
+    		</div>
+    <div class="row">
+
+   <h3 class="counter pull-right">
+ 		    	<timer countdown="service.tl" interval="1000" finish-callback="callbackTimer.finished()">{{hours}} Hour {{minutes}} Min {{seconds}} second{{secondsS}} </timer>
+ 		
+</div></timer>
+
+			</h3>
+			
+		    	
+    </div>
+
+
+<div class="row">
+            <br>
+            <!-- <table class="table">
+                <tr > -->
+                    <div ng-repeat="question in service.questions">
+<!--                     
+                        <button class="btn btn-circle pull-left">
+                             <a style="color:cornflowerblue" href="" ng-class="{darkblue: service.currentIndex==$index}" ng-click="goToQuestion($index)">{{$index +1}}</a>
+                        </button>
+ -->
+                             <a ng-click="goToQuestion($index)"><button class={{service.questions[$index].btnColor}}>{{$index +1}}</button></a>
+                    </div>
+                <!-- </tr>
+            </table> -->
+</div>
+   <!--  Mark for Review: <input type="checkbox"> -->
+    <br>
+
+    <br>
+
+    <div ng-swipe-right="previousQuestion()" ng-swipe-left="nextQuestion()">
+    <table class="table">
+        <tr>
+            <td><b>Question  {{service.currentIndex+1}}: &nbsp; {{service.currentQuestion.text}} </b></td>
+        </tr>
+	</table>
+	<div class="well">
+		<table class="">
+	        <tr ng-repeat="choice in service.currentQuestion.choices">
+	            <td><input type="checkbox" name="choiceGroup" id="{{$index}}" ng-model="service.currentQuestion.answers[$index+1]">
+	            											<label for="{{$index}}">{{choice}}</label></td>
+	        </tr>
+	    </table>
+	    
+    </div>
+</div>
+    <hr/>
+    <ul class="pager">
+        <li><a href="" ng-if="service.currentIndex > 0" ng-click="previousQuestion()">Previous</a></li>
+        <li><a href="" ng-if="service.currentIndex < (service.questions.length-1)" ng-click="nextQuestion()">Next</a></li>
+        <!-- <li style="display: block; margin-top: 50px;"><a href="" ng-click="submitData()">Submit</a></li>
+        <li style="margin-top: 50px;">
+        	        	<div class="row">
+            		<button class="btn btn-primary" ng-click="submitData()">Submit Test</button>
+    		</div>
+        	
+    	</li> -->
+        <li>
+        	<div class="row">
+        		<div class="pull-right">
+            		<!-- <button class="btn btn-primary disabled" ng-click="loadData()" >Start Test</button> -->
+            		<button  style="margin-top: 50px;" class="btn btn-primary" ng-click="submitData()">Submit Test</button>
+        		</div>
+    		</div>
+    	</li>
+    </ul>
+    
+    
+
+</div>

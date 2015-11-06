@@ -1,0 +1,37 @@
+<h1>My Account Page</h1>
+<!--
+<h1 ng-show="loginService.loginDetails.user.isSocialUser=='N'">not a social user</h1>
+<h1 ng-show="loginService.loginDetails.user.isSocialUser=='Y'">social user</h1>
+-->
+
+<div ng-show="loginService.loginDetails.user.isSocialUser=='N'">
+    <table style="width: 90%">
+        <tr>
+            <th>Username</th>
+            <td>{{loginService.loginDetails.user.userName}}</td>
+            <td><button data-ng-disabled="true">Edit</button></td>
+        </tr>
+        <tr>
+            <th>ChangePassword</th>
+            <td>-</td>
+            <td><button>Edit</button></td>
+        </tr>
+        <tr>
+            <th>EmailId</th>
+            <td>{{loginService.loginDetails.user.email}}</td>
+            <td><button>Edit</button></td>
+        </tr>
+        <tr>
+            <th>Contact</th>
+            <td>{{loginService.loginDetails.user.contact}}</td>
+            <td><button>Edit</button></td>
+        </tr>
+    </table>
+</div>
+<div>
+<h1><a href="#">Assessment report</a></h1>
+    quiz_grades
+    </div>
+<h1><a href="#">Feedback</a></h1>
+
+<h1><a href="#">Survey</a></h1>
