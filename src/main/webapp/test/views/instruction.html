@@ -1,0 +1,56 @@
+<!--<tk-test-header></tk-test-header>-->
+<div class="row">
+<div class="">	
+	<div class="col-sm-10">
+	<h1>Test Instructions {{landingService.currentQuizId}}</h1> <br>
+		<div class="col-sm-6">
+			<table class="table">
+				<tbody>
+					<tr>
+ 						<td>Total number of questions : <strong>{{testService.questions.length}}.</strong></td>
+					</tr>
+					<tr>
+						<td>Time alloted : <strong>{{testService.tl / 60}} minutes.</strong><br><br></td>
+					</tr>
+					<tr>
+						<td>Each question carry <strong>1 mark, no negative marks..</strong></td>
+					</tr>
+					
+					<tr>
+						<td>When the timer reaches zero, the examination will end by itself.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-sm-6">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td>Don't try refresh the page</td>
+					</tr>
+					<tr>
+						<td>Test will be submitted automatically if the time expired.</td>
+					</tr>
+					<tr>
+						<td>Click the 'Submit Test' button given in the bottom of the page to Submit your answers.</td>
+					</tr>
+					<tr>
+						<td>The countdown timer in the top right corner of screen
+							will display the remaining time available for you to complete the examination</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br/><br/>
+		<div>
+			<button ng-click="loadData()" class="btn btn-lg btn-success">
+				Start Test <span class="glyphicon glyphicon-ok"></span>
+			</button>
+		</div>
+	</div>
+</div>
+<div class="col-md-2">
+            <tk-right-pane></tk-right-pane>
+</div>
+</div>
+<tk-footer></tk-footer>

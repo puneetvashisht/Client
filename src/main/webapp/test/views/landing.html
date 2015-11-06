@@ -1,0 +1,48 @@
+<!--<tk-test-header></tk-test-header>-->
+<div class="row">
+<div class="col-md-10">
+
+		<h1>Online/Practice Tests</h1>
+
+		 <div ng-hide="loginService.loginDetails.quizs.length!=0">
+			<h1 class="text-danger">No test assigned</h1>
+			<h3 class="text-danger">Please contact system administrator</h3>
+		</div>
+		<table ng-show="loginService.loginDetails.quizs.length!=0"
+			class="table table-striped table-hover table-responsive">
+			<thead>
+			<tr>
+				<td>S.No</td>
+				<td>Test</td>
+				<td>Duration</td>
+			</tr>
+			</thead>
+
+<tbody>
+			<tr ng-repeat="quiz in loginService.loginDetails.quizs">
+				<td>{{$index+1}}.</td>
+				<!-- <td><a ng-click="selectQuiz(quiz.quizId, quiz.tl)">{{quiz.quizName}}</a>
+				<td>{{quiz.tl/60}} mins.</td>
+				<td>{{quiz.prefferedBehaviour}}</td> -->
+				<td><a ng-click="selectQuiz(quiz.quizId, quiz.tl, quiz.prefferedBehaviour, quiz.quizName)">{{quiz.quizName}}</a>
+				<td>{{quiz.tl/60}} mins.</td>
+<!--  				<td>{{quiz.prefferedBehaviour}}</td>  -->
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+<!-- <h1>Quizes</h1>
+
+<table>
+        <tr ng-repeat="quiz in loginService.loginDetails.quizs">
+             <td><a ng-click="selectQuiz(quiz.quizId, quiz.tl)">{{quiz.quizName}}</a> </td>
+        </tr>
+</table> -->
+
+</div>
+<div class="col-md-2">
+            <tk-right-pane></tk-right-pane>
+</div>
+</div>
+<tk-footer></tk-footer>
