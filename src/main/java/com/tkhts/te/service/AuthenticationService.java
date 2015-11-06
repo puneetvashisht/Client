@@ -15,4 +15,6 @@ public interface AuthenticationService {
 	@Path("/authenticate/")
 	public abstract Response authenticateUser(User user);
 	
+//	Add a new comment
+	
 }
